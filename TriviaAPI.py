@@ -2,8 +2,8 @@ import requests
 import random
 import html
 
-EDUCATION_CATAGORY_ID = 9
-API_URL = f"https://opentdb.com/api.php?amount=1&category={EDUCATION_CATAGORY_ID}&type=multiple"
+EDUCATION_CATAGORY_ID = 8
+API_URL = f"https://opentdb.com/api.php?amount=10&category={EDUCATION_CATAGORY_ID}&type=multiple"
 
 
 def get_education_quetsions():
