@@ -39,8 +39,9 @@ def run_quiz():
 
         print(f"Question{i}: {question}")
 
-        for idx, options in enumerate(options, 1):
-            print(f"{idx}: {options}")
+        for idx, opt in enumerate(options, 1):
+            print(f"{idx}: {opt}")
+
 
         
         while True:
