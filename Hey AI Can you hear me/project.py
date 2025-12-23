@@ -18,8 +18,6 @@ def wait_for_enter():
     input()
     stop_event.set()
 
-
-
 def spinner():
     spinner_chars = "/-\|"
     idx = 0
