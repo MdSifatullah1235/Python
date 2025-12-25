@@ -2,10 +2,11 @@ import requests
 import io
 from PIL import Image
 
+API_TOKEN =''
 API_URL_GPT2 = "https://api-inference.huggingface.co/models/gpt2"
 API_URL_SD = "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5"
 API_URL_VIT = "https://api-inference.huggingface.co/models/nlpconnect/vit-gpt2-image-captioning"
-HEADERS = {"Authorization": "Bearer YOUR_HUGGINGFACE_API_TOKEN"}
+HEADERS = {"Authorization": "Bearer "}
 
 def query_api(payload, url):
     response = requests.post(url, headers=HEADERS, json=payload)
