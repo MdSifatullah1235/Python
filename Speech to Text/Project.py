@@ -33,6 +33,7 @@ def record_until_enter():
     rate = 16000
     frames_per_buffer = 1024
 
+
     stream = p.open(format=audio_format, channels=channels, rate=rate, 
                     input=True, frames_per_buffer=frames_per_buffer)
     frames = []
