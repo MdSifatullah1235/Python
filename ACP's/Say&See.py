@@ -86,7 +86,7 @@ def show_waveform(data, rate):
     time_axis = np.linspace(0, len(samples) / rate, num=len(samples))
     
     plt.figure(figsize=(10, 4))
-    plt.plot(time_axis, samples, color="blue")
+    plt.plot(time_axis, samples, color="red")
     plt.title("Audio Waveform")
     plt.xlabel("Time (seconds)")
     plt.ylabel("Amplitude")
