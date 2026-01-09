@@ -1,45 +1,35 @@
 from google import genai
 import config
 
-client = genai.Client(config.API_KEY)
+client = genai.Client(api_key=config.API_KEY)
 
 def generate_response(prompt):
     response = client.models.generate_content(
         model="gemini-2.0-flash",
         contents=prompt
     )
+    return response.text 
 
-
-def silly_prompt(prompt):
+def silly_prompt():
     print("Welcome to Prompt Engineering")
-    print("Today we will learn about context,clarity and specificity")
-    print("Let's start by creating a vague prompt and slowly refine it")
+    print("Today we will learn about context, clarity, and specificity\n")
 
-    vague_prompt = input("Enter a vague prompt: ")
-
-    print(f"Vague Prompt:{vague_prompt}")
+    vague_prompt = input("Enter a vague prompt (e.g., 'Write a story'): ")
     vague_response = generate_response(vague_prompt)
-    print("AI's response to this vague prompt:")
+    print(f"\nAI's response to: {vague_prompt}")
     print(vague_response)
+    print("-" * 30)
 
-    specific_prompt = input("Enter a specific prompt: ")
-
-    print(f"Specific prompt: {specific_prompt}")
+    specific_prompt = input("Enter a specific prompt (e.g., 'Write a 2-sentence story about a cat'): ")
     specific_response = generate_response(specific_prompt)
-    print("AI's response to this specific prompt:")
+    print(f"\nAI's response to: {specific_prompt}")
     print(specific_response)
+    print("-" * 30)
 
+    context_prompt = input("Enter a contextually specific prompt: ")
+    context_response = generate_response(context_prompt)
+    print(f"\nAI's response to: {context_prompt}")
+    print(context_response)
 
-    print("Now let's add specificity and context to our prompt")
-
-    contextually_specfic_prompt = input("Enter a contextually specific prompt: ")
-    contextually_specfic_response = generate_response(contextually_specfic_prompt)
-    print("AI's response to this contextually specific prompt:")
-    print(contextually_specfic_response)
-
-# Reflection
-#How did the AI perform when we made the prompt more specific?
-#How did the AI perform when we made the prompt more contextually specific?
-#How did the AI perform when we made the prompt more contextually specific and clarifiied?
-
-silly_prompt()
+if __name__ == "__main__":
+    silly_prompt()
