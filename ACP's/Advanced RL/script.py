@@ -34,6 +34,3 @@ while True:
         improved_response = generate_response(improvement_prompt)
 
         print(f"\nImproved Response:\n{improved_response}\n")
-
-if __name__ == "__main__":
-    reinforcement_learning_activity()
