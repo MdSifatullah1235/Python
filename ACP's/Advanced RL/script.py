@@ -5,6 +5,8 @@ import config
 
 client = genai.Client(api_key=config.GEMINI_API_KEY)
 
+counter = 0
+
 def generate_response(prompt, temperature=0.3):
     try:
         contents = [types.Content(role="user", parts=[types.Part.from_text(text=prompt)])]
@@ -34,3 +36,4 @@ while True:
         improved_response = generate_response(improvement_prompt)
 
         print(f"\nImproved Response:\n{improved_response}\n")
+        counter += 1
