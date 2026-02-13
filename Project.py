@@ -1,7 +1,7 @@
 import streamlit as st
 from google import genai
 from google.genai import types
-from config import GEMINI_apikey
+from Multi_Tool_AI_App.config import GEMINI_apikey
 
 # -----------------------------
 # Gemini Client
